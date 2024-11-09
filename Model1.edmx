@@ -13,11 +13,11 @@
           <Property Name="FundName" Type="nvarchar" MaxLength="250" Nullable="false" />
           <Property Name="LibraryID" Type="int" Nullable="false" />
           <Property Name="QuanBooks" Type="int" Nullable="false" />
-          <Property Name="QuanJournals" Type="int" />
-          <Property Name="QuanNewspapers" Type="int" />
-          <Property Name="QuanCollections" Type="int" />
-          <Property Name="QuanDissertations" Type="int" />
-          <Property Name="QuanReferats" Type="int" />
+          <Property Name="QuanJournals" Type="int" Nullable="false" />
+          <Property Name="QuanNewspapers" Type="int" Nullable="false" />
+          <Property Name="QuanCollections" Type="int" Nullable="false" />
+          <Property Name="QuanDissertations" Type="int" Nullable="false" />
+          <Property Name="QuanReferats" Type="int" Nullable="false" />
           <Property Name="MainImagePath" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Libraries">
@@ -113,18 +113,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Фонд библиотеки_Библиотеки1">
-          <End Role="Libraries" Type="Self.Libraries" Multiplicity="1" />
-          <End Role="FundLibrary" Type="Self.FundLibrary" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Libraries">
-              <PropertyRef Name="LibraryID" />
-            </Principal>
-            <Dependent Role="FundLibrary">
-              <PropertyRef Name="LibraryID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="Хранилище LibraryModelContainer">
           <EntitySet Name="FundLibrary" EntityType="Self.FundLibrary" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Libraries" EntityType="Self.Libraries" Schema="dbo" store:Type="Tables" />
@@ -147,10 +135,6 @@
             <End Role="Libraries" EntitySet="Libraries" />
             <End Role="Staff" EntitySet="Staff" />
           </AssociationSet>
-          <AssociationSet Name="FK_Фонд библиотеки_Библиотеки1" Association="Self.FK_Фонд библиотеки_Библиотеки1">
-            <End Role="Libraries" EntitySet="Libraries" />
-            <End Role="FundLibrary" EntitySet="FundLibrary" />
-          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
@@ -165,14 +149,13 @@
           <Property Name="FundName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="LibraryID" Type="Int32" Nullable="false" />
           <Property Name="QuanBooks" Type="Int32" Nullable="false" />
-          <Property Name="QuanJournals" Type="Int32" />
-          <Property Name="QuanNewspapers" Type="Int32" />
-          <Property Name="QuanCollections" Type="Int32" />
-          <Property Name="QuanDissertations" Type="Int32" />
-          <Property Name="QuanReferats" Type="Int32" />
+          <Property Name="QuanJournals" Type="Int32" Nullable="false" />
+          <Property Name="QuanNewspapers" Type="Int32" Nullable="false" />
+          <Property Name="QuanCollections" Type="Int32" Nullable="false" />
+          <Property Name="QuanDissertations" Type="Int32" Nullable="false" />
+          <Property Name="QuanReferats" Type="Int32" Nullable="false" />
           <Property Name="MainImagePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="ReffilFund" Relationship="Self.FK_Пополнение_фонда_Фонд_библиотеки" FromRole="FundLibrary" ToRole="ReffilFund" />
-          <NavigationProperty Name="Libraries" Relationship="Self.FK_Фонд_библиотеки_Библиотеки1" FromRole="FundLibrary" ToRole="Libraries" />
         </EntityType>
         <EntityType Name="Libraries">
           <Key>
@@ -182,7 +165,6 @@
           <Property Name="NameLibrary" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Adress" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="City" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="FundLibrary" Relationship="Self.FK_Фонд_библиотеки_Библиотеки1" FromRole="Libraries" ToRole="FundLibrary" />
           <NavigationProperty Name="Staff" Relationship="Self.FK_Сотрудники_Библиотеки1" FromRole="Libraries" ToRole="Staff" />
         </EntityType>
         <EntityType Name="ReffilFund">
@@ -239,18 +221,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Фонд_библиотеки_Библиотеки1">
-          <End Role="Libraries" Type="Self.Libraries" Multiplicity="1" />
-          <End Role="FundLibrary" Type="Self.FundLibrary" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Libraries">
-              <PropertyRef Name="LibraryID" />
-            </Principal>
-            <Dependent Role="FundLibrary">
-              <PropertyRef Name="LibraryID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Сотрудники_Библиотеки1">
           <End Role="Libraries" Type="Self.Libraries" Multiplicity="1" />
           <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
@@ -296,10 +266,6 @@
           <AssociationSet Name="FK_Пополнение_фонда_Фонд_библиотеки" Association="Self.FK_Пополнение_фонда_Фонд_библиотеки">
             <End Role="FundLibrary" EntitySet="FundLibrary" />
             <End Role="ReffilFund" EntitySet="ReffilFund" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Фонд_библиотеки_Библиотеки1" Association="Self.FK_Фонд_библиотеки_Библиотеки1">
-            <End Role="Libraries" EntitySet="Libraries" />
-            <End Role="FundLibrary" EntitySet="FundLibrary" />
           </AssociationSet>
           <AssociationSet Name="FK_Сотрудники_Библиотеки1" Association="Self.FK_Сотрудники_Библиотеки1">
             <End Role="Libraries" EntitySet="Libraries" />

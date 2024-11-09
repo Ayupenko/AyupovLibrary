@@ -17,7 +17,6 @@ namespace AyupovLibrary
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Libraries()
         {
-            this.FundLibrary = new HashSet<FundLibrary>();
             this.Staff = new HashSet<Staff>();
         }
     
@@ -26,8 +25,6 @@ namespace AyupovLibrary
         public string Adress { get; set; }
         public string City { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<FundLibrary> FundLibrary { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Staff> Staff { get; set; }
     }

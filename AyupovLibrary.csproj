@@ -169,6 +169,14 @@
     <Resource Include="resour\picture.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="resour\lib1.png" />
+    <Resource Include="resour\lib2.png" />
+    <Resource Include="resour\lib3.png" />
+    <Resource Include="resour\lib4.png" />
+    <Resource Include="resour\lib5.png" />
+    <Resource Include="resour\lib6.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -179,12 +187,6 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
-    <Resource Include="resour\lib1.png" />
-    <Resource Include="resour\lib2.png" />
-    <Resource Include="resour\lib3.png" />
-    <Resource Include="resour\lib4.png" />
-    <Resource Include="resour\lib5.png" />
-    <Resource Include="resour\lib6.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
