@@ -12,7 +12,7 @@ namespace AyupovLibrary
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    
+
     public partial class LibraryEntities : DbContext
     {
         public LibraryEntities()
@@ -33,7 +33,7 @@ namespace AyupovLibrary
         {
             throw new UnintentionalCodeFirstException();
         }
-    
+
         public virtual DbSet<FundLibrary> FundLibrary { get; set; }
         public virtual DbSet<Libraries> Libraries { get; set; }
         public virtual DbSet<ReffilFund> ReffilFund { get; set; }

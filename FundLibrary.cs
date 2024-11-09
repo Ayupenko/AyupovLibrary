@@ -24,15 +24,14 @@ namespace AyupovLibrary
         public string FundName { get; set; }
         public int LibraryID { get; set; }
         public int QuanBooks { get; set; }
-        public Nullable<int> QuanJournals { get; set; }
-        public Nullable<int> QuanNewspapers { get; set; }
-        public Nullable<int> QuanCollections { get; set; }
-        public Nullable<int> QuanDissertations { get; set; }
-        public Nullable<int> QuanReferats { get; set; }
+        public int QuanJournals { get; set; }
+        public int QuanNewspapers { get; set; }
+        public int QuanCollections { get; set; }
+        public int QuanDissertations { get; set; }
+        public int QuanReferats { get; set; }
         public string MainImagePath { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ReffilFund> ReffilFund { get; set; }
-        public virtual Libraries Libraries { get; set; }
     }
 }

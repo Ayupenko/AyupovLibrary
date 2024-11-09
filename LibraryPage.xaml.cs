@@ -70,9 +70,9 @@ namespace AyupovLibrary
 
             }
 
-            currentLibrary = currentLibrary.Where(p=>p.FundName.ToLower().Contains(TBoxSearch.Text.ToLower()) || p.Libraries.NameLibrary.ToLower().Contains(TBoxSearch.Text.ToLower())).ToList();
+            currentLibrary = currentLibrary.Where(p => p.FundName.ToLower().Contains(TBoxSearch.Text.ToLower())).ToList();
 
-            if(RButtonDown.IsChecked.Value)
+            if (RButtonDown.IsChecked.Value)
             {
                 currentLibrary=currentLibrary.OrderByDescending(p=>p.FundName).ToList();
             }
